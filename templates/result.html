@@ -1,0 +1,510 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Survey Result</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'survey_form.css')}}">-->
+<!--    <style>-->
+<!--      /* Style the result container */-->
+<!--      .result-container {-->
+<!--        border: 1px solid #ddd;-->
+<!--        border-radius: 5px;-->
+<!--        padding: 20px;-->
+<!--        margin: 20px auto;-->
+<!--        max-width: 600px;-->
+<!--        text-align: center;-->
+<!--        background-color:#ffffff;-->
+<!--      }-->
+<!--      body {-->
+
+<!--&lt;!&ndash;    background-image: url("static/survey_result.png");&ndash;&gt;-->
+
+<!--&lt;!&ndash;    background-size: cover;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    background-position: center center;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    background-attachment: fixed;&ndash;&gt;-->
+
+<!--&lt;!&ndash;  }&ndash;&gt;-->
+<!--      /* Style the result title */-->
+<!--      .result-title {-->
+<!--        font-size: 30px;-->
+<!--        font-weight: bold;-->
+<!--        margin-bottom: 20px;-->
+<!--        color: #008080;-->
+<!--      }-->
+
+<!--      /* Style the result emotion */-->
+<!--      .result-emotion {-->
+<!--        font-size: 50px;-->
+<!--        font-weight: bold;-->
+<!--        margin-bottom: 20px;-->
+<!--        color: #ff5733;-->
+<!--      }-->
+
+<!--      /* Style the result message */-->
+<!--      .result-message {-->
+<!--        font-size: 20px;-->
+<!--        margin-bottom: 20px;-->
+<!--        color: #555;-->
+<!--      }-->
+
+<!--      /* Style the result dashboard */-->
+<!--      .result-dashboard {-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--        align-items: center;-->
+<!--        margin-top: 30px;-->
+<!--      }-->
+
+<!--      /* Style the result dashboard items */-->
+<!--      .result-dashboard-item {-->
+<!--        border: 1px solid #ddd;-->
+<!--        border-radius: 50%;-->
+<!--        width: 100px;-->
+<!--        height: 100px;-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--        align-items: center;-->
+<!--        margin-right: 20px;-->
+<!--      }-->
+
+<!--      /* Style the result dashboard item count */-->
+<!--      .result-dashboard-item-count {-->
+<!--        font-size: 30px;-->
+<!--        font-weight: bold;-->
+<!--        color: #555;-->
+<!--      }-->
+
+<!--      /* Style the result dashboard item label */-->
+<!--      .result-dashboard-item-label {-->
+<!--        font-size: 18px;-->
+<!--        color: #aaa;-->
+<!--      }-->
+<!--    </style>-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <div class="result-container">-->
+<!--      <h1 class="result-title">Your Emotional Status</h1>-->
+<!--      <br>-->
+<!--      <br>-->
+<!--&lt;!&ndash;      {% if sad %}&ndash;&gt;-->
+<!--&lt;!&ndash;      <<h2 class="result-emotion">sad</h2>>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;      {% if happy %}&ndash;&gt;-->
+<!--&lt;!&ndash;      <<h2 class="result-emotion">happy</h2>>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;      {% if neutral %}&ndash;&gt;-->
+<!--&lt;!&ndash;      <<h2 class="result-emotion">neutral</h2>>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;      {% if stressed %}&ndash;&gt;-->
+<!--&lt;!&ndash;      <<h2 class="result-emotion">stressed</h2>>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;      {% if angry %}&ndash;&gt;-->
+<!--&lt;!&ndash;      <<h2 class="result-emotion">angry</h2>>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endif %}&ndash;&gt;-->
+<!--      {% if sad %}-->
+
+<!--      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-sadness.png" height="200" width="200"></h2>-->
+<!--<br>-->
+<!--      {% endif %}-->
+
+<!--      {% if happy %}-->
+
+<!--      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-happiness.png" height="200" width="200"></h2>-->
+<!--<br>-->
+<!--      {% endif %}-->
+
+<!--      {% if neutral %}-->
+
+<!--      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/youths/support-kv.png" height="200" width="300"></h2>-->
+<!--<br>-->
+<!--      {% endif %}-->
+
+<!--      {% if stressed %}-->
+
+<!--      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-disgust.png" height="200" width="200"></h2>-->
+<!--      <br>-->
+<!--      {% endif %}-->
+
+<!--      {% if angry %}-->
+
+<!--      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-anger.png" height="200" width="200"></h2>-->
+<!--      <br>-->
+<!--      {% endif %}-->
+
+<!--&lt;!&ndash;      <h2 class="result-emotion">{{ max_emotion }}</h2>&ndash;&gt;-->
+<!--      <p class="result-message">Thank you for taking the survey!</p>-->
+
+
+<!--    </div>-->
+<!--  </body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Survey Result</title>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'survey_form.css')}}">
+    <style>
+      /* Style the result container */
+      .result-container {
+        border-radius: 5px;
+        padding: 10px;
+        margin-top:20px;
+        margin-bottom:50px;
+        max-width: 1000px;
+        max-height: 90%;
+        text-align: center;
+<!--        background-color:#ffffff;-->
+      }
+
+      body {
+
+<!--    background-image: url("static/survey_result.png");-->
+
+<!--    background-size: cover;-->
+
+<!--    background-position: center center;-->
+
+<!--    background-attachment: fixed;-->
+
+<!--  }-->
+      /* Style the result title */
+      .result-title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 60px;
+        color: #008080;
+      }
+
+      /* Style the result emotion */
+      .result-emotion {
+        font-size: 50px;
+        margin-top:20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ff5733;
+      }
+
+      /* Style the result message */
+      .result-message {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      /* Style the result dashboard */
+      .result-dashboard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+<!--        margin-top: 30px;-->
+      }
+
+      /* Style the result dashboard items */
+      .result-dashboard-item {
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      /* Style the result dashboard item count */
+      .result-dashboard-item-count {
+        font-size: 30px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      /* Style the result dashboard item label */
+      .result-dashboard-item-label {
+        font-size: 18px;
+        color: #aaa;
+      }
+     .card{
+
+
+     }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div class="container">
+
+        <div class="result-container">
+
+      {% if sad %}
+            {% if name %}
+            <h1 class="result-title">Hi {{name}}, Your Emotional Status is: </h1>
+      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-sadness.png" height="200" width="200"></h2>
+        <h2>Hi there, we understand that there are some days where we may feel down or unhappy!</h2>
+            <h2 style="color:orange"><strong>"Happiness is not something you postpone for the future; it is something you design for the present"</strong></h2>
+            {% endif %}
+
+            <h2>10 ways to deal with sadness when you still need to work:</h2>
+
+            <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Try these tips:</h5>
+              <p class="card-text">1. Be sad
+              <br>
+                  2. Put together a self-care kit & don’t forget it at home
+                  <br>
+                  3. Eat well
+                  <br>
+                  4. Listen to audio books
+                  <br>
+                  5. Do productive spurts of 45 minutes
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">More ways:</h5>
+              <p class="card-text">6. Keep pesky co-workers at bay
+              <br>
+                  7. Eat at your desk
+                  <br>
+                  8. Get some sun and fresh air
+                  <br>
+                  9. Spend time in the bathroom
+                  <br>
+                  10. Ask for help
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+
+      {% if happy %}
+            {% if name %}
+            <h1 class="result-title">Hi {{name}}, Your Emotional Status is: </h1>
+      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-happiness.png" height="200" width="200"></h2>
+<h2>Hi there, it's great that you are having a good day!</h2>
+            <h2 style="color:orange"><strong>"Yesterday is not ours to recover, but tomorrow is ours to win or lose."</strong></h2>
+            {% endif %}
+
+            <h2>Tips to improve your productivity and work-life balance:</h2>
+
+            <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Try these tips:</h5>
+              <p class="card-text">1. Map your daily tasks clearly
+              <br>
+                  2. Boost your concentration
+                  <br>
+                  3. Eliminate distractions
+                  <br>
+                  4. Batch your work where possible
+                  <br>
+                  5. Embrace flexi-work (if available)
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">5 best ways to build resilience in workplace:</h5>
+              <p class="card-text">1. Upskill to improve chances of employability
+              <br>
+                  2. Build a strong support network
+                  <br>
+                  3. Save money for a rainy day
+                  <br>
+                  4. Be kind to yourself
+                  <br>
+                  5. Plan your career path and embrace change
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+
+
+
+        {% if neutral %}
+           {% if name %}
+            <h1 class="result-title">Hi {{name}}, Your Emotional Status is: </h1>
+            <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/youths/support-kv.png" height="200" width="300"></h2>
+<h2>It's admirable how you're able to keep your emotions in check and focus on the facts.Your neutral approach helps to create a safe and respectful environment for everyone involved!</h2>
+            <h2 style="color:orange"><strong>"Believe in yourself and all that you are. Know that there is something inside of you that is greater than any obstacle."</strong></h2>
+            {% endif %}
+
+            <h2>Stretches to do at work every day:</h2>
+
+            <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Areas to stretch:</h5>
+              <p class="card-text">1. Stretching out your arms Tricep stretch, overhead reach, upper body and arm stretch
+              <br>
+                  2. Stretching out your torso Shoulder stretch, forward stretch, torso stretch
+
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Areas to stretch:</h5>
+              <p class="card-text">3. Stretching out your legs and knees Hip and knee flexion stretch, hamstrings stretch
+              <br>
+                  4. Head and shoulder stretches Shoulder shrugs, neck stretches, upper trap stretch
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+
+
+
+
+
+
+
+
+
+      {% if stressed %}
+
+            {% if name %}
+            <h1 class="result-title">Hi {{name}}, Your Emotional Status is: </h1>
+      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-disgust.png" height="200" width="200"></h2>
+        <h2 style="color:orange">Hi there, we understand that there are some days where we may feel down or unhappy!</h2>
+            <h2><strong>"When we are closed to ideas, what we hear is criticism. When we are open to criticism, what we get is advice."</strong></h2>
+            {% endif %}
+
+            <h2>Tips for when you feel overwhelmed by workload:</h2>
+
+            <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Try these tips:</h5>
+              <p class="card-text">1. Practice your acceptance skills with healthy self-talk
+              <br>
+                  2. Track your time to give yourself an accurate baseline
+                  <br>
+                  3. Check your assumptions about other people’s expectations
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Try these tips:</h5>
+              <p class="card-text">4. Examine your assumptions about what success requires
+              <br>
+                  5. Start taking time off now instead of waiting for the “right” time
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+
+
+
+
+
+      {% if angry %}
+            {% if name %}
+            <h1 class="result-title">Hi {{name}}, Your Emotional Status is: </h1>
+      <h2 class="result-emotion"><img src="https://www.healthhub.sg/sites/assets/Assets/Programs/mindsg/phase-2/images/managing-our-emotions/icon-basic-anger.png" height="200" width="200"></h2>
+        <h2 style="color:orange">Hi there, we understand how overwhelming some days or situations can be!</h2>
+            <h2><strong>"The way you tell your story to yourself matters."</strong></h2>
+            {% endif %}
+
+            <h2>Dealing with workplace conflict:</h2>
+
+            <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Common reasons for workplace conflict:</h2>
+              <p class="card-text">1. Lack of clear, concise, accurate, and timely communication of information
+              <br>
+                  2. Letting emotions drive decisions
+
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Tips for dealing with workplace conflicts:</h2>
+              <p class="card-text">1. Define acceptable behaviour
+              <br>
+                  2. Hit conflict head on
+                  <br>
+                  3. Understanding the “What's in it for me” Factor
+                  <br>
+                  4. The importance factor
+                  <br>
+                  5. View conflict as an opportunity
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+
+<!--      <h2 class="result-emotion">{{ max_emotion }}</h2>-->
+
+
+    </div>
+
+
+
+
+        <br>
+        <p class="result-message">Thank you for taking the survey!</p>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SURVEY FORM</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'survey_form.css')}}" type = "text/css">
+
+            <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+            <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <style>
+            .p1 {
+              font-family: "brush script m7", cursive;
+            }
+            </style>
+ 
+         <script>
+        // Initialize 
+        let HappyCount = 0;
+        let NeutralCount = 0;
+        let SadCount = 0;
+        let StressCount = 0;
+        let AngryCount = 0;
+
+ 
+
+        // Function to submit the form
+        function submitForm() {
+            // Get all the selected radio buttons
+            let radios = document.querySelectorAll('input[type="radio"]:checked');
+            for (let i = 0; i < radios.length; i++) {
+                // Increment the counter for the selected option
+                switch (radios[i].value) {
+                    case 'Happy':
+                        HappyCount++;
+                        break;
+                    case 'Neutral':
+                        NeutralCount++;
+                        break;
+                    case 'Sad':
+                        SadCount++;
+                        break;
+                    case 'Stress':
+                        StressCount++;
+                        break;
+                    case 'Angry':
+                        AngryCount++;
+                        break;
+                }
+            }
+
+            let  = {
+  question1: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question2: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question3: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question4: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question5: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question6: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question7: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question8: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question9: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question10: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question11: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question12: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question13: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question14: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question15: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+  question16: { happy: 0, sad: 0, angry: 0, stress: 0, neutral: 0 },
+};
+
+// Function to increment the emotion counter for a given question and emotion
+function incrementCounter(question, emotion) {
+  [question][emotion]++;
+}
+
+// Function to reset all emotion  to zero
+function reset() {
+  for (let question in emotion) {
+    for (let emotion in [question]) {
+      [question][emotion] = 0;
+    }
+  }
+}
+
+const maxCount = Math.max(HappyCount, SadCount, AngryCount, StressCount, NeutralCount);
+ alert(`The Max count is ${maxCount}`);
+localStorage.setItem('maxCount', maxCount);
+window.location.href = 'result.html';
+        
+}
+            reset();
+
+        Document.getElementById("survey-form").reset();
+
+        function resetForm() {
+			document.getElementById("survey-form").reset();
+		}
+
+</script>    
+            </head>
+     
+      <body>
+        <h1>Survey Form for employee emotion health monitoring</h1>
+        <form id = "survey-form" action="result.html" onsubmit="resetForm()" method="post">
+            <p class="p1">SURVEY FORM</p>
+    <div class="form-group">
+     <label for="name">Employee-ID :<br>
+     <input type="text" id="Employee-ID" name="Employee-ID" placeholder="Enter your Employee-ID" required>
+     </div>
+     <br>        
+    <div class="form-group">
+    <label for="name">Name:<br>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <br>
+    <div class="form-group">
+    <label for="email">Email:<br>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    
+    <p class="p1">Question 1: How satisfied are you with your job overall?</p>
+          
+            <input type="radio" name="emotion" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion" value="Angry">
+            Angry
+          <br>
+    
+         
+    <p class="p1">Question 2: Do you feel that your contributions to the company are valued?</p>
+          
+            <input type="radio" name="emotion1" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion1" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion1" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion1" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion1" value="Angry">
+            Angry
+          <br>
+    
+         
+    <p class="p1">Question 3: How satisfied are you with your work-life balance?</p>
+          
+            <input type="radio" name="emotion2" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion2" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion2" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion2" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion2" value="Angry">
+            Angry
+          <br>
+    
+   <p class="p1">Question 4: Do you feel that you have opportunities for growth and advancement within the company?</p>
+          
+            <input type="radio" name="emotion3" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion3" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion3" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion3" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion3" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 5: How satisfied are you with your current workload?</p>
+          
+            <input type="radio" name="emotion4" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion4" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion4" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion4" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion4" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 6: How would you rate the level of support you receive from your manager?</p>
+          
+            <input type="radio" name="emotion5" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion5" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion5" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion5" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion5" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 7: How often do you receive feedback on your work?</p>
+          
+            <input type="radio" name="emotion6" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion6" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion6" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion6" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion6" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 8: How satisfied are you with your compensation package?</p>
+          
+            <input type="radio" name="emotion7" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion7" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion7" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion7" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion7" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 9: How comfortable do you feel with the level of communication within the company?</p>
+          
+            <input type="radio" name="emotion8" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion8" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion8" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion8" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion8" value="Angry">
+            Angry
+          <br>
+    
+    [11:39 AM] Susmita Gorai
+    <p class="p1">Question 10: How well do you feel your ideas are heard and valued by your supervisor?</p>
+          
+            <input type="radio" name="emotion9" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion9" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion9" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion9" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion9" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 11: How would you rate the level of support you receive from your colleagues?</p>
+          
+            <input type="radio" name="emotion10" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion10" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion10" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion10" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion10" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 12: How satisfied are you with the level of communication from management regarding company updates and changes?</p>
+          
+            <input type="radio" name="emotion11" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion11" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion11" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion11" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion11" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 13: How would you rate the company's commitment to employee development and training?</p>
+          
+            <input type="radio" name="emotion12" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion12" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion12" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion12" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion12" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 14: How would you rate the level of collaboration among teams?</p>
+          
+            <input type="radio" name="emotion13" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion13" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion13" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion13" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion13" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 15: How would you rate the level of transparency within the company?</p>
+          
+            <input type="radio" name="emotion14" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion14" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion14" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion14" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion14" value="Angry">
+            Angry
+          <br>
+    
+    <p class="p1">Question 16: How would you rate the company's commitment to diversity and inclusion?</p>
+          
+            <input type="radio" name="emotion15" value="Happy">
+            Happy
+          <br>
+          
+            <input type="radio" name="emotion15" value="Neutral">
+            Neutral
+          <br>
+          
+            <input type="radio" name="emotion15" value="Sad">
+            Sad
+          <br>
+          
+            <input type="radio" name="emotion15" value="Stress">
+            Stress
+          <br>
+          
+            <input type="radio" name="emotion15" value="Angry">
+            Angry
+          <br>
+          <br>
+          <div class="form-group">
+            <label for="comments">Additional Comments:<br>
+            <textarea id="comments" name="comments" rows="7" placeholder="Enter your comments"></textarea>
+            </div>
+            <div class="form-group">
+            <button type="submit" onclick="submitForm()">Submit</button>
+            <button type="reset">reset</button>
+            </div>
+  
+        </form>  
+</body>
+</html>

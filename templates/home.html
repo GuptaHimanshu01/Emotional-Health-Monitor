@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASK-CRUD_APP_home_page.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'home.css')}}" type = "text/css">
+    <style>
+        .parent{
+      font-family: "Nunito", sans-serif;
+    }
+    .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.text{
+font-size: 20px;
+}
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+    </style>
+</head>
+<body>
+      <div class="parent">
+<!--        -->
+        <div class="child child2">
+<!--            <ul class="nav justify-content-center">-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link"  style="color:rgb(0, 75, 93);"  href="#">Instagram</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link"  style="color:rgb(0, 75, 93);" href="#">Linkedin</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link"  style="color:rgb(0, 75, 93);" href="#">facebook</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link"  style="color:rgb(0, 75, 93);" href="#">whatsapp</a>-->
+<!--                </li>-->
+<!--              </ul>-->
+        </div>
+        <div class="child child3">
+            <ul class="nav nav-tabs nav-fill" style="background-color:#150857;  font-size:1.7em;">
+                <li class="nav-item">
+                  <a class="nav-link" style="color:whitesmoke;" href="{{url_for('home')}}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color:whitesmoke;" href="{{url_for('login')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color:whitesmoke;" href="{{url_for('register')}}">Register</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" style="color:whitesmoke;" href="{{url_for('dashboard')}}">Dashboard</a>-->
+<!--                  </li>-->
+                <li class="nav-item">
+                  <a class="nav-link1"   style="color:whitesmoke; background-color:#150857;" href="{{url_for('home')}}">
+                    <div class="logo" title="Logout">
+                        <img src="{{ url_for('static', filename= 'logout_logo.png')}}" alt="employee image" height="50" width="50" style="padding:px 0px 0px 5px">
+                        </div>
+                       </a>
+                </li>
+              </ul>
+        </div>
+
+<!--        <div class="child child4">-->
+<!--          <h3 class="m-2">Home Page</h3>-->
+<!--      </div>-->
+
+<!--      <div class="child child5" style="color:rgb(0, 75, 93);"><h3 class="m-2"><i>User : </i></h3></div>-->
+
+        <div class="child child6 container">
+            <div class="centercontent">
+                <div class="textcontent">
+                    <section>
+                        <h2 style="font-size:40px; color:#000"><b>Welcome to the Employee Management System</b></h2>
+                        <br>
+    <p class="text" style="color:#000;">Here, you can manage your employees and departments, view reports, and customize system settings.</p>
+  </section>
+  <footer>
+    <p>Copyright ©EHM 2023</p>
+  </footer>
+                </div>
+            </div>
+        </div>
+ 
+
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

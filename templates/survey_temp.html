@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f7dfe8;
+            margin: 0;
+        }
+        .survey-container {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #8b5c9e;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #8b5c9e;
+        }
+        .emoji-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .emoji-options label {
+            margin-bottom: 0;
+        }
+        .emoji-options label:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .emoji-options input[type="radio"] {
+            display: none;
+        }
+        .emoji-options input[type="radio"] + span {
+            display: inline-block;
+            font-size: 50px;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .emoji-options input[type="radio"]:checked + span {
+            background-color: #8b5c9e;
+            color: #ffffff;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: #8b5c9e;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #632a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h1>How are you feeling today?</h1>
+        <label>Choose one option:</label>
+        <div class="emoji-options">
+            <label>
+                <input type="radio" name="emotion" value="happy">
+                <span>😊</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion" value="neutral">
+                <span>😐</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion" value="sad">
+                <span>😢</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion" value="stressed">
+                <span>😫</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion" value="angry">
+                <span>😠</span>
+            </label>
+        </div>
+        <h1>How are you feeling today?</h1>
+        <label>Choose one option:</label>
+        <div class="emoji-options">
+            <label>
+                <input type="radio" name="emotion1" value="happy">
+                <span>😊</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion1" value="neutral">
+                <span>😐</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion1" value="sad">
+                <span>😢</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion1" value="stressed">
+                <span>😫</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion1" value="angry">
+                <span>😠</span>
+            </label>
+        </div>
+        <h1>How are you behaving today?</h1>
+        <label>Choose one option:</label>
+        <div class="emoji-options">
+            <label>
+                <input type="radio" name="emotion2" value="happy">
+                <span>😊</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion2" value="neutral">
+                <span>😐</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion2" value="sad">
+                <span>😢</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion2" value="stressed">
+                <span>😫</span>
+            </label>
+            <label>
+                <input type="radio" name="emotion2" value="angry">
+                <span>😠</span>
+            </label>
+        </div>
+        <button class="submit-btn" type="submit">Submit</button>
+    </div>
+</body>
+</html>

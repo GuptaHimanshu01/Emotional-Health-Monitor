@@ -1,0 +1,115 @@
+import string
+
+import nltk
+from flask import jsonify
+# nltk.data.path.append("C:/Users/swarnava_sinha/AppData/Roaming/nltk_data")
+from nrclex import NRCLex
+
+
+class EmployeeEmotions:
+    goa_sadIndex, pune_sadIndex, indore_sadIndex, hyderabad_sadIndex, banglore_sadIndex, nagpur_sadIndex = 0, 0, 0, 0, 0, 0
+    goa_employeeCount, pune_employeeCount, indore_employeeCount, hyderabad_employeeCount, banglore_employeeCount, nagpur_employeeCount = 0, 0, 0, 0, 0, 0
+
+
+    def __init__(self):
+        self.happy, self.neutral, self.sadness, self.stressed, self.angry, self.total_count = 0, 0, 0, 0, 0, 0
+    # self.goa_sadIndex, self.pune_sadIndex, self.indore_sadIndex, self.hyderabad_sadIndex = 0, 0, 0, 0
+    # self.banglore_sadIndex, self.nagpur_sadIndex = 0, 0
+
+
+def getEmotionOfAllEmployeesUtil(self, employees):
+    for employee in employees:
+        # access the Employee id of each Employees
+        EMP_ID = employee.EMP_ID
+
+        # getting path for each employee data
+        file_path = "./Emp_Files/emp_" + str(EMP_ID) + ".txt"
+        # reading text file
+        try:
+            Location = employee.LOCATION
+            # counting employees according to location
+            # if (Location == 'Pune'):
+            #     EmployeeEmotions.pune_employeeCount += 1
+            # elif (Location == 'Goa'):
+            #     EmployeeEmotions.goa_employeeCount += 1
+            # elif (Location == 'Nagpur'):
+            #     EmployeeEmotions.nagpur_sadIndex += 1
+            # elif (Location == 'Hyderabad'):
+            #     EmployeeEmotions.hyderabad_sadIndex += 1
+            # elif (Location == 'Banglore'):
+            #     EmployeeEmotions.banglore_sadIndex += 1
+
+            text_data = open(file_path, encoding="utf-8").read()
+            # creating emotion object using nrclex fun
+            emotion = NRCLex(text_data)
+            # emotion_percentage =  int(emotion.top_emotions) *100
+            top_emotion = emotion.top_emotions
+            # convert tuple into list
+            emotion_tuple = top_emotion[0]
+
+            # Counting Emotions of all employees
+            if (emotion_tuple[0] == 'joy' or emotion_tuple[0] == 'surprise'):
+                self.happy += 1
+            elif (emotion_tuple[0] == 'positive' or emotion_tuple[0] == 'trust'):
+                self.neutral += 1
+            elif (emotion_tuple[0] == 'sadness' or emotion_tuple[0] == 'negative'):
+                self.sadness += 1
+            elif (emotion_tuple[0] == 'disgust' or emotion_tuple[0] == 'fear' or 'anticipation'):
+                self.stressed += 1
+            elif (emotion_tuple[0] == 'anger'):
+                self.angry += 1
+            self.total_count += 1
+
+            # Counting sadness according to location
+            if (Location == 'Pune' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.pune_sadIndex += 1
+            elif (Location == 'Goa' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.goa_sadIndex += 1
+            elif (Location == 'Nagpur' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.nagpur_sadIndex += 1
+            elif (Location == 'Hyderabad' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.hyderabad_sadIndex += 1
+            elif (Location == 'Indore' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.indore_sadIndex += 1
+            elif (Location == 'Banglore' or emotion_tuple[0] == 'sadness'):
+                EmployeeEmotions.banglore_sadIndex += 1
+        except Exception as ex:
+            continue
+
+
+# # emotion = NRCLex(text)
+
+# return emotion.top_emotions[0][0]+": "+str(round(emotion.top_emotions[0][1],2))
+#
+
+def getEmotionIndexOfAllEmployeesForPiechart(self, employees):
+    # this method calls only at once and perform db related operation
+    self.getEmotionOfAllEmployeesUtil(employees)
+
+    happy = (self.happy / self.total_count) * 100
+    neutral = (self.neutral / self.total_count) * 100
+    sadness = (self.sadness / self.total_count) * 100
+    stressed = (self.stressed / self.total_count) * 100
+    angry = (self.angry / self.total_count) * 100
+
+    return jsonify(
+        [{
+            'happy': happy,
+            'neutral': neutral,
+            'sadness': sadness,
+            'stressed': stressed,
+            'angry': angry,
+        }])
+
+
+def getEmotionIndexOfAllEmployeesForBargraph():
+    # EmployeeEmotions.pune_sadIndex = EmployeeEmotions.pune_sadIndex * 10
+    return jsonify(
+        [{
+            'pune': EmployeeEmotions.pune_sadIndex,
+            'nagpur': EmployeeEmotions.nagpur_sadIndex,
+            'goa': EmployeeEmotions.goa_sadIndex,
+            'indore': EmployeeEmotions.indore_sadIndex,
+            'hyderabad': EmployeeEmotions.hyderabad_sadIndex,
+            'banglore': EmployeeEmotions.banglore_sadIndex,
+        }])

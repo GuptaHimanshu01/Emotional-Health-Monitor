@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SENTIA (Sentiment Analysis for Team and Individual Assessment)</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename= 'vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename= 'vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+<!--  src="{{ url_for('static', filename= 'logout_logo.png')}}"-->
+<!--  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'survey_form.css')}}">-->
+  <link href="{{ url_for('static', filename= 'style.css')}}" rel="stylesheet">
+
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="#hero" class="logo d-flex align-items-center">
+        <img src="{{ url_for('static', filename= 'img/logo.png')}}" alt="">
+        <span style="color: #220366;">SENTIA</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Search</a></li>
+          <li><a class="nav-link scrollto" href="#team">Analysis</a></li>
+          <li><a class="nav-link scrollto"  target="_blank" href="http://localhost:5000/">EMS</a></li>
+            <li><a class="nav-link scrollto"   target="_blank" href="http://localhost:5000/survey">SAT</a></li>
+          <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="container1 col-lg-6 d-flex flex-column justify-content-center">
+          <div class="text1">
+            <h1 style="text-shadow: 1px 1px 1px rgba(0, 0, 0, 12); color: rgb(246, 217, 25); ">Check in with your emotions</h1>
+          </div>
+          
+          <h2 style="text-shadow: 1px 1px 1px rgba(0, 0, 0, 2); color: #220366; ">let us guide you to a healthier you</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span >Explore More</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="../assets/img/hero-img.png" class="img-fluid" alt="">
+        </div> -->
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <!-- <h3>Who We Are</h3> -->
+              <h2>Welcome to "<strong>SENTIA- Sentiment Analysis for Team and Individual Assessment</strong>", your personal emotion health monitoring tool for businesses..</h2>
+              <p>
+                This innovative technology
+        allows employers to analyze employee chat conversations to gain valuable insights into their emotional
+        wellbeing,
+        which can help in creating a workplace culture that prioritizes mental health and wellness.</p>
+      <p>We're here to help you harness the power of emotional intelligence to create a better workplace for everyone.
+        By
+        providing this powerful tool to your team, you can create a happier, more productive workplace culture that
+        supports the emotional health of your employees. Let "SENTIA " be your partner in promoting emotional wellness
+        in
+        the workplace.</p>
+              <div class="text-center text-lg-start">
+                <a href="#services" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Navigate to Insights</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ url_for('static', filename= 'img/about.jpg')}}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Values</h2>
+          <p>Empowering You to Take Control of Your Emotional Health</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="{{ url_for('static', filename= 'img/values-1.png')}}" class="img-fluid" alt="">
+              <h3>Self-awareness</h3>
+              <p>SENTIA help users become more self-aware about their emotional state by tracking and monitoring their mood and other emotional indicators.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="{{ url_for('static', filename= 'img/values-3.png')}}" class="img-fluid" alt="">
+              <h3>Personalized support</h3>
+              <p>SENTIA provide personalized support to users based on their emotional health status, helping them to manage their emotions better and cope with stress.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="{{ url_for('static', filename= 'img/values-2.png')}}" class="img-fluid" alt="">
+              <h3>Data-driven insights</h3>
+              <p>SENTIA provide users with data-driven insights on their emotional health trends and patterns over time. This can help users better understand themselves and make informed decisions about their emotional health.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- End Values Section-->
+
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+
+      <div class="container" >
+       
+
+      <div class="emotions">
+        
+        <div class="emotions">
+          <div class="all-emotions">
+            <div class="emotion-card" >
+              <img src="{{ url_for('static', filename= 'img/happy.png')}}" alt="Button Image">
+            </div>
+            <div class="emotion-card">
+              <img src="{{ url_for('static', filename= 'img/sad.png')}}" alt="Button Image">
+            </div>
+            <div class="emotion-card">
+              <img src="{{ url_for('static', filename= 'img/stressed.png')}}" alt="Button Image">
+            </div>
+            <div class="emotion-card">
+              <img src="{{ url_for('static', filename= 'img/disgust.png')}}" alt="Button Image">
+            </div>
+            <div class="emotion-card">
+              <img src="{{ url_for('static', filename= 'img/angry.png')}}" alt="Button Image">
+            </div>
+          </div>
+            
+
+          <div id="result-table-container">
+            <div id="result-table">
+              <div id="table-options">
+                <button id="hide-table-btn"><i class="bi bi-arrow-left"></i></button>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Email</th>
+                    <th>Project Name</th>
+                    <th>Location</th>
+                    <th>Manager Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+  
+          <div class="search-employee">
+            <h2>Enter EMP ID</h2>
+            <div class="search-form">
+              <form onsubmit="searchEmployeeEmotion(event)">
+                <input type="search" name="search" id="searchemotion" placeholder="Enter Employee ID" class="buttons">
+                <button class="search-btn" type="submit" ><i class="bi bi-search"></i></button>
+              </form>
+            </div>
+          </div>
+      </div>
+  
+      <div class="charts">
+
+        <div class="employee-info">
+          <h3 id="employee-name"></h3>
+          <p id="employee-bu"></p>
+        </div>
+      
+        <div class="chart-container">
+      
+      
+            
+          <canvas id="emotion-pie-chart"></canvas>
+        </div>
+        
+      </div>
+    
+
+    
+
+      </div>
+     </div>
+
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Analysis</h2>
+          <p>Overall Emotion Analysis</p>
+        </header>
+
+        <div class="row gy-4">
+          <div class="charts">
+
+  
+  
+  
+            <div class="piecontainer">
+              <div id="pieChartContainer"></div>
+            </div>
+            
+            <div class="barcontainer">
+              <h3 style="text-align: center; margin-top: 1rem;"><strong>Stressed Employees(Location Wise)</strong> </h3>
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+            <script>
+              let pieChart;
+        function searchEmployeeEmotion(event) {
+            event.preventDefault();
+            const emp_id = document.getElementById('searchemotion').value;
+            console.log(emp_id);
+            const url = `http://127.0.0.1:5000/employees/searchemotion/accuracy/${emp_id}`;
+            
+            fetch(url)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                return response.json();
+              })
+              .then(data => {
+        
+                document.getElementById("employee-name").innerHTML = `Emotion Count of ${data.emp_name}`;
+                document.getElementById("employee-bu").innerHTML = `BU: ${data.emp_bu}`;
+                const chartData = {
+                  labels: ['Happy', 'Neutral', 'Sadness', 'Stressed', 'Angry'],
+                  datasets: [{
+                    label: 'Emotion Count of ' + data.emp_name,
+                    data: [data.happy, data.neutral, data.sadness, data.stressed, data.angry],
+                    backgroundColor: [
+                      '#FF6384',
+                      '#36A2EB',
+                      '#FFCE56',
+                      '#4BC0C0',
+                      '#FF8C00'
+                    ]
+                  }]
+                };
+                
+                const chartOptions = {
+                  responsive: true,
+                  maintainAspectRatio: false
+                };
+        
+                const piecontainer = document.querySelector('.piecontainer');
+              piecontainer.style.marginTop = '130px';
+        
+              const chartContainer = document.getElementById('emotion-pie-chart').parentNode;
+              chartContainer.style.display = 'block';
+                
+                if (pieChart) {
+                  // if pieChart already exists, update its data
+                  pieChart.data = chartData;
+                  pieChart.update();
+                } else {
+                  // otherwise, create a new pie chart instance
+                  pieChart = new Chart(document.getElementById('emotion-pie-chart'), {
+                    type: 'pie',
+                    data: chartData,
+                    options: chartOptions
+                  });
+                }
+              })
+              .catch(error => {
+              console.error('Error:', error);
+              alert('Invalid employee ID entered');
+            });
+          }
+        
+         
+            </script>
+            
+          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/guptahimanshu3007/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Himanshu Gupta</h4>
+                <span>Chief Executive Officer</span>
+                <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.</p>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Team Section -->
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SENTIA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+        Designed by <a href="https://www.linkedin.com/in/guptahimanshu3007/">Himanshu Gupta</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='script/main.js') }}"></script>
+
+<!--  <script src="../assets/js/main.js"></script>-->
+
+</body>
+
+</html>
