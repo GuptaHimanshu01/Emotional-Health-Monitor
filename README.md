@@ -26,12 +26,12 @@ SENTIA is an emotion health monitoring tool for businesses that allows employers
 - Database: MySQL
 
 
-## Screenshots
+## Demo
 
-Here are some screenshots of the Emotion Health Monitor in action:
+Here is the demo video of the Emotion Health Monitor in action:
 
-![Login Screen](/screenshots/login.png?raw=true "Login Screen")
 
-![Dashboard Screen](/screenshots/dashboard.png?raw=true "Dashboard Screen")
 
-![History Screen](/screenshots/history.png?raw=true "History Screen")
+https://user-images.githubusercontent.com/57289040/236300199-5cf5eda0-cd3c-4350-b759-d5f88e05e935.mp4
+
+
